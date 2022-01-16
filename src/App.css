@@ -1,38 +1,105 @@
+html, body {
+    padding: 0;
+}
+
+html, body, #root, .App {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+
+    padding: 10px;
+    background-color: #313d52;
+    color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Container */
+.container {
+    border-top: 1px solid #63616e;
+    border-left: 1px solid #63616e;
+    border-bottom: 1px solid #888597;
+    border-right: 1px solid #888597;
+    padding: 5px;
+    margin: 1px;
+    background-color: #2b3548;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container h2 {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color: #dbdadf;
 }
 
-.App-link {
-  color: #61dafb;
+/* StylesBuilding */
+.stylesEditor {
+    margin-top: 4px;
+    height: calc(100% - 20px);
+    border-radius: 4px;
+
+    background-color: #1a1a20;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ConstructBuilding */
+pre.fixedStyles code {
+    font-size: 10px;
+}
+
+.constructBuilding .part {
+    margin-top: 5px;
+    padding: 4px;
+    background-color: #354158;
+    border-top: 1px solid #505e78;
+    border-left: 1px solid #505e78;
+    border-bottom: 1px solid #222D46;
+    border-right: 1px solid #222D46;
+}
+
+.constructBuilding .id {
+    color: #fb9191;
+    margin-left: 4px;
+}
+
+.constructBuilding .class {
+    color: #94f794;
+    margin-left: 4px;
+}
+
+/* ViewBuilding */
+.viewBuilding {
+    background-color: Lavender;
+}
+
+/* Instructions */
+.mission h1 {
+    font-size: 16px;
+}
+
+.instructions {
+    overflow: scroll;
+}
+
+.instructions code {
+    font-size: 14px;
+    color: #b896f5;
+}
+
+.instructions .color {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border: 1px solid white;
+    margin-left: 4px;
 }

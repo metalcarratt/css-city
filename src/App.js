@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import ViewBuilding from './views/ViewBuilding.jsx';
+import StyleBuilding from './views/StyleBuilding.jsx';
+import ConstructBuilding from './views/ConstructBuilding.jsx';
+import Instructions from './views/Instructions.jsx';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ViewBuilding />
+      <Instructions />
+      <StyleBuilding />
+      <ConstructBuilding />
     </div>
   );
 }
