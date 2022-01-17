@@ -1,6 +1,7 @@
 exports.blurb = `
 <h1>Mission 1 - Purple-ize the house</h1>
 <p>The colour of this house is a bit bland. Can you make it more pretty?</p>
+<h1>How to:</h1>
 <p>First you need to target one of the building parts. Some parts have an id, and some have a class. To target a part with an id of 'roof', you can type:</p>
 <pre><code>
 #roof {

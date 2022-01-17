@@ -1,15 +1,18 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+let elementIndex = 0;
+function newIndex() {
+    elementIndex++;
+    return elementIndex;
+}
+
 function parseTree(tree) {
-    console.log("parseTree");
     const elems = [];
     for (let item of tree) {
-        console.log(item);
-
-        const elem = React.createElement('div', { className: 'part'}, [
-            item.name ? React.createElement('span', {className: 'id'}, 'id = ' + item.name) : '',
-            item.className ? React.createElement('span', {className: 'class'}, 'class = ' + item.className) : '',
+        const elem = React.createElement('div', { className: 'part', key: newIndex()}, [
+            item.name ? React.createElement('span', {className: 'id', key: newIndex()}, 'id = ' + item.name) : '',
+            item.className ? React.createElement('span', {className: 'class', key: newIndex()}, 'class = ' + item.className) : '',
             item.children ? parseTree(item.children) : ''
         ]);
 

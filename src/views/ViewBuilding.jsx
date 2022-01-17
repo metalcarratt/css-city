@@ -1,8 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+let elementIndex = 0;
+function newIndex() {
+    elementIndex++;
+    return elementIndex;
+}
+
 function createElement(element) {
-    const attrs = {};
+    const attrs = {
+        key: newIndex()
+    };
     if (element.name) {
         attrs.id = element.name;
     }
