@@ -1,0 +1,104 @@
+/* Color list */
+.color-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.color-item {
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.color-list .color-item:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.color-item .color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid black;
+}
+
+.color-item label {
+    color: #dbdadf;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.color-list .color-item label:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.color-item:hover label {
+    color: black;
+}
+
+/* Color drops */
+
+.color-drop {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.color-drop:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.color-drop.selected {
+    border: 2px solid yellow;
+}
+
+.color-drop > label {
+    color: #dbdadf;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.color-drop label:hover {
+    cursor: pointer;
+}
+
+.color-drop:hover label {
+    color: black;
+}
+
+.palette {
+    margin-bottom: 4px;
+}
+
+
+/* Media queries */
+
+@media only screen and (max-width: 1230px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}

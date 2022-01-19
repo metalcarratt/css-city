@@ -43,6 +43,37 @@ html, body, #root, .App {
     color: #dbdadf;
 }
 
+.heading h2 {
+    display: inline-block;
+}
+
+.heading button {
+    margin-left: 16px;
+    background-color: #2b3548;
+    border-top: none;
+    border-left: none;
+    color: #bdcff9;
+    border-bottom: 1px solid #60687a;
+    border-right: 1px solid #60687a;
+}
+
+.heading button:hover {
+    cursor: pointer;
+    background-color: #475a7c;
+}
+
+.heading label {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.heading .color {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+}
+
 /* StylesBuilding */
 .stylesEditor {
     margin-top: 4px;
@@ -72,9 +103,17 @@ pre.fixedStyles code {
     margin-left: 4px;
 }
 
+.constructBuilding .id:hover {
+    cursor: pointer;
+}
+
 .constructBuilding .class {
     color: #94f794;
     margin-left: 4px;
+}
+
+.constructBuilding .class:hover {
+    cursor: pointer;
 }
 
 /* ViewBuilding */

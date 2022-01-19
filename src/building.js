@@ -16,14 +16,28 @@ const buildingSlice = createSlice({
         fixedStyles: mission1.styles,
         blurb: mission1.blurb,
         userStyles: "",
-        missionId: 1
+        missionId: 1,
+        palette: [
+            "RosyBrown",
+            "SandyBrown",
+            "Goldenrod",
+            "DarkGoldenrod"
+        ],
+        cursorPosition: 0
     },
     reducers: {
-        add(state) {
-            state.tree.push('span');
-        },
         updateStyles(state, action) {
             state.userStyles = action.payload;
+        },
+        insertIntoStyles(state, {payload}) {
+            const textBeforeCursorPosition = state.userStyles.substring(0, state.cursorPosition);
+            const textAfterCursorPosition = state.userStyles.substring(state.cursorPosition, state.userStyles.length);
+            const replaceText = textBeforeCursorPosition + payload + textAfterCursorPosition;
+            state.userStyles = replaceText;
+            state.cursorPosition = state.cursorPosition + payload.length;
+        },
+        updateCursorPosition(state, {payload}) {
+            state.cursorPosition = payload;
         },
         updateMission(state, missionId) {
             const mId = missionId.payload;
@@ -33,9 +47,15 @@ const buildingSlice = createSlice({
                 state.blurb = missions[mId].blurb;
                 state.fixedStyles = missions[mId].styles;
             }
+        },
+        changePalette(state, {payload}) {
+            let _palette = [...state.palette];
+            _palette[payload.index] = payload.color;
+            state.palette = _palette; 
+            console.log(state.palette);
         }
     }
 });
 
-export const { add, updateStyles, updateMission } = buildingSlice.actions;
+export const { updateStyles, updateMission, changePalette, updateCursorPosition, insertIntoStyles } = buildingSlice.actions;
 export default buildingSlice.reducer;
