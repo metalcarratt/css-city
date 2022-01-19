@@ -8,15 +8,7 @@ exports.blurb = `
     ...
 }
 </code></pre>
-<p>Here are some other colours to play with:</p>
-<ul>
-    <li>LightGreen <span class="color" style="background-color: LightGreen"/></li>    
-    <li>LimeGreen <span class="color" style="background-color: LimeGreen"/></li>
-    <li>MediumSeaGreen <span class="color" style="background-color: MediumSeaGreen"/></li>
-    <li>SeaGreen <span class="color" style="background-color: SeaGreen"/></li>
-    <li>DarkGreen <span class="color" style="background-color: DarkGreen"/></li>
-    <li>LightSeaGreen <span class="color" style="background-color: LightSeaGreen"/></li>
-</ul>
+
 <p>Can you make the house more stylish?</p>
 `
 

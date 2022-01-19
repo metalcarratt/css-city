@@ -44,8 +44,7 @@ function StyleBuilding() {
     const editColors = () => setShowColorModal(true);
 
     return (
-        <div className="container">
-            <p> showColorModal = {'' + showColorModal}</p>
+        <div className="container styleBuilding">
             <div className="heading">
                 <h2>Appearance</h2>
                 <button onClick={clickBgColor}>bgColor</button>

@@ -8,15 +8,6 @@ exports.blurb = `
     ...
 }
 </code></pre>
-<p>Here are some more colours to play with:</p>
-<ul>
-    <li>PowderBlue <span class="color" style="background-color: PowderBlue"/></li>
-    <li>LightSteelBlue <span class="color" style="background-color: LightSteelBlue"/></li>
-    <li>CornflowerBlue <span class="color" style="background-color: CornflowerBlue"/></li>    
-    <li>MediumSlateBlue <span class="color" style="background-color: MediumSlateBlue"/></li>
-    <li>RoyalBlue <span class="color" style="background-color: RoyalBlue"/></li>
-    <li>MidnightBlue <span class="color" style="background-color: MidnightBlue"/></li>
-</ul>
 `
 
 exports.building = [

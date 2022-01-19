@@ -8,14 +8,17 @@ function newIndex() {
     return elementIndex;
 }
 
-function CreatePartTag(name, className, children) {
+function CreatePartTag(name, className, children, iterator) {
     return (
         <div className="part" key={newIndex()}>
+            <span className="iterator">{iterator}</span>
+            <span>
             { name ? CreateIdTag(name) : '' }
             { className ? CreateClassTag(className) : '' }
             { children
                 ? parseTree(children)
                 : '' }
+            </span>
         </div>
     );
 }
@@ -52,8 +55,9 @@ function CreateClassTag(className) {
 function parseTree(tree) {
     const elems = [];
 
-    for (let item of tree) {
-        const elem = CreatePartTag(item.name, item.className, item.children);
+    for (let iterator = 0; iterator < tree.length; iterator++) {
+        const item = tree[iterator];
+        const elem = CreatePartTag(item.name, item.className, item.children, iterator);
         elems.push(elem);
     }
     return elems;

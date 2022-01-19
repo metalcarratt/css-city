@@ -20,15 +20,7 @@ exports.blurb = `
     background-color: purple;
 } 
 </code></pre>
-<p>Here are some colours to play with:</p>
-<ul>
-    <li>Thistle <span class="color" style="background-color: Thistle"/></li>
-    <li>Plum <span class="color" style="background-color: Plum"/></li>
-    <li>Orchid <span class="color" style="background-color: Orchid"/></li>
-    <li>MediumPurple <span class="color" style="background-color: MediumPurple"/></li>
-    <li>RebeccaPurple <span class="color" style="background-color: RebeccaPurple"/></li>
-    <li>Indigo <span class="color" style="background-color: Indigo"/></li>
-</ul>
+
 <p>Can you make the house more pretty?</p>
 `
 

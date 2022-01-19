@@ -77,10 +77,22 @@ html, body, #root, .App {
 /* StylesBuilding */
 .stylesEditor {
     margin-top: 4px;
-    height: calc(100% - 20px);
+    height: calc(100% - 24px);
     border-radius: 4px;
 
     background-color: #1a1a20;
+}
+
+@media only screen and (max-width: 1320px) {
+    .stylesEditor {
+        height: calc(100% - 46px);
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .stylesEditor {
+        height: calc(100% - 64px);
+    }
 }
 
 /* ConstructBuilding */
@@ -96,6 +108,20 @@ pre.fixedStyles code {
     border-left: 1px solid #505e78;
     border-bottom: 1px solid #222D46;
     border-right: 1px solid #222D46;
+
+    display: grid;
+    grid-template-columns: 14px 1fr;
+}
+
+.constructBuilding .iterator {
+    font-family: monospace;
+    margin-right: 8px;
+    display: inline-block;
+    align-self: center;
+}
+
+.constructBuilding > span {
+    display: inline-block;
 }
 
 .constructBuilding .id {
