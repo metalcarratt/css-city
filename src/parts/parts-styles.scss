@@ -1,0 +1,128 @@
+#roof {
+    background-color: LightSalmon;
+    height: 40px;
+    border-radius: 40px 40px 0 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &.angled {
+        background-color: LightSalmon;
+        height: 40px;
+        border-radius: 0;
+        clip-path: polygon(
+            20% 0,
+            80% 0,
+            100% 100%,
+            0% 100%
+        );
+
+        &.left {
+            clip-path: polygon(
+                100% 0,
+                100% 0,
+                100% 100%,
+                0% 100%
+            );
+        }
+
+        &.right {
+            clip-path: polygon(
+                0 0,
+                0 0,
+                100% 100%,
+                0% 100%
+            );
+        }
+
+        &.center {
+            clip-path: polygon(
+                50% 0,
+                50% 0,
+                100% 100%,
+                0% 100%
+            );
+        }
+    }
+}
+
+#wall {
+    background-color: PeachPuff;
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    column-gap: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#window {
+    background-color: DarkKhaki;
+    width: 30px;
+    height: 20px;
+    margin-bottom: 25px;
+    display: inline-block;
+    vertical-align: top;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    box-sizing: border-box;
+
+    &.narrow {
+        width: 20px;
+    }
+}
+
+#door {
+    background-color: DarkKhaki;
+    width: 20px;
+    height: 45px;
+    display: inline-block;
+    vertical-align: top;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    box-sizing: border-box;
+
+    &.garage {
+        height: 45px;
+        width: 75px;
+        margin-top: 15px;
+        margin-left: 15px;
+        display: inline-block;
+        background-color: DarkKhaki;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+    }
+}
+
+#partition {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#sign {
+    background-color: yellow;
+    color: black;
+    font-size: 12px;
+    margin-bottom: 2px;
+    padding: 2px 4px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#clock {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 25px;
+
+    display: grid;
+    justify-content: center;
+
+    /* the 'L' */
+    color: black;
+    font-size: 10px;
+    vertical-align: top;
+}
+

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateMission } from '../building.js';
+import { updateMission } from '../store.js';
+import './instruction-styles.scss';
 
-function Instructions() {
+function InstructionsView() {
     const blurb = useSelector((state) => state.building.blurb);
     const missionId = useSelector((state) => state.building.missionId);
 
@@ -24,7 +25,7 @@ function Instructions() {
                     <button onClick={clickPrevious}>Previous</button>
                 ) : ''}
                 
-                { (missionId < 3 ) ? (
+                { (missionId < 5 ) ? (
                     <button onClick={clickNext}>Next</button>
                 ) : ''}
             </div>
@@ -32,4 +33,4 @@ function Instructions() {
     );
 }
 
-export default Instructions;
+export default InstructionsView;

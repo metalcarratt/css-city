@@ -13,78 +13,23 @@ exports.blurb = `
 `
 
 exports.building = [
+    {   type: 'roof' },
     {
-        name: 'roof',
-        
-    },
-    {
-        name: 'house',
+        type: 'house',
         children: [
-            {
-                name: 'wall',
+            {   type: 'wall',
                 children: [
-                    {
-                        className: 'window'
-                    },
-                    {
-                        className: 'window'
-                    }
+                    {   type: 'window' },
+                    {   type: 'window' }
                 ]
             },
             {
-                name: 'wall',
+                type: 'wall',
                 children: [
-                    {
-                        className: 'window'
-                    },
-                    {
-                        className: 'door'
-                    }
+                    {   type: 'window' },
+                    {   type: 'door' }
                 ]
             }
         ]
     }
 ];
-
-
-exports.styles = `
-#roof {
-    background-color: LightSalmon;
-    width: 100px;
-    height: 40px;
-    border-radius: 40px 40px 0 0;
-}
-
-#wall {
-    background-color: PeachPuff;
-    width: 100px;
-    height: 60px;
-    
-}
-
-.window {
-    background-color: DarkKhaki;
-    width: 30px;
-    height: 20px;
-    margin-top: 15px;
-    margin-left: 15px;
-    display: inline-block;
-    vertical-align: top;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    box-sizing: border-box;
-}
-
-.door {
-    background-color: DarkKhaki;
-    width: 20px;
-    height: 45px;
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 15px;
-    margin-left: 20px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    box-sizing: border-box;
-}
-`;

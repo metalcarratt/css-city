@@ -1,0 +1,12 @@
+/* StylesBuilding */
+.styleBuilding {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.stylesEditor {
+    margin-top: 4px;
+    border-radius: 4px;
+    background-color: #1a1a20;
+}
+

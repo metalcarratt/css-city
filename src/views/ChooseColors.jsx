@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './modal.css';
-import './chooseColors.css';
+import './chooseColors.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import { changePalette } from '../building.js';
+import { changePalette } from '../building/store.js';
 
 const colors = [
     // whites

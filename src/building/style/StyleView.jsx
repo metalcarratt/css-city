@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateStyles, updateCursorPosition, insertIntoStyles } from '../building.js';
+import { updateStyles, updateCursorPosition, insertIntoStyles } from '../store.js';
 import CodeEditor from '@uiw/react-textarea-code-editor';
-import ChooseColors from './ChooseColors.jsx';
+import ChooseColors from '../../views/ChooseColors.jsx';
+import './style-styles.css';
 
-function StyleBuilding() {
+function StyleView() {
     const userStyles = useSelector((state) => state.building.userStyles);
     const dispatch = useDispatch();
     const [showColorModal, setShowColorModal] = useState(false);
@@ -46,7 +47,7 @@ function StyleBuilding() {
     return (
         <div className="container styleBuilding">
             <div className="heading">
-                <h2>Appearance</h2>
+                <h2>Editor</h2>
                 <button onClick={clickBgColor}>bgColor</button>
                 <button onClick={clickCurlyBrace}>&#123;&#125;</button>
                 {
@@ -78,4 +79,4 @@ function StyleBuilding() {
     );
 }
 
-export default StyleBuilding;
+export default StyleView;

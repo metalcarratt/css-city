@@ -12,41 +12,37 @@ exports.blurb = `
 
 exports.building = [
     {
-        className: 'left',
+        type: 'partition',
         children: [ {
-            name: 'roof',   
+            type: 'roof'
         },
         {
-            name: 'house',
+            type: 'house',
             children: [ {
-                name: 'wall',
+                type: 'wall',
                     children: [
-                        { className: 'window' },
-                        { className: 'window' }
+                        {   type: 'window' },
+                        {   type: 'window' }
                     ]
                 },
                 {
-                    name: 'wall',
+                    type: 'wall',
                     children: [
-                        { className: 'window' },
-                        { className: 'door' }
+                        {   type: 'window' },
+                        {   type: 'door' }
                     ]
                 }
             ]
         } ]
     },
     {
-        className: 'right',
+        type: 'partition',
         children: [
+            {   type: 'roof' },
             {
-                name: 'roof',   
-            },
-            {
-                name: 'wall',
+                type: 'wall',
                 children: [
-                    {
-                        className: 'garage-door'
-                    }
+                    {   type: 'garage-door' }
                 ]
             }
         ]

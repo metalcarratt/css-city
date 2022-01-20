@@ -1,19 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import mission1 from './missions/mission1.js';
-import mission2 from './missions/mission2.js';
-import mission3 from './missions/mission3.js';
+import mission1 from '../missions/mission1.js';
+import mission2 from '../missions/mission2.js';
+import mission3 from '../missions/mission3.js';
+import mission4 from '../missions/mission4.js';
+import mission5 from '../missions/mission5.js';
 
-const missions = [];
-missions[1] = mission1;
-missions[2] = mission2;
-missions[3] = mission3;
+const missions = {
+    1: mission1,
+    2: mission2,
+    3: mission3,
+    4: mission4,
+    5: mission5
+};
 
 const buildingSlice = createSlice({
     name: 'building',
     initialState: {
         tree: mission1.building,
-        fixedStyles: mission1.styles,
         blurb: mission1.blurb,
         userStyles: "",
         missionId: 1,
@@ -41,11 +45,10 @@ const buildingSlice = createSlice({
         },
         updateMission(state, missionId) {
             const mId = missionId.payload;
-            if (mId >= 1 && mId <=3) {
+            if (mId >= 1 && mId <= 5) {
                 state.missionId = mId;
                 state.tree = missions[mId].building;
                 state.blurb = missions[mId].blurb;
-                state.fixedStyles = missions[mId].styles;
             }
         },
         changePalette(state, {payload}) {

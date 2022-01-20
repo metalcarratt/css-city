@@ -1,12 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { insertIntoStyles } from '../building.js';
-
-let elementIndex = 0;
-function newIndex() {
-    elementIndex++;
-    return elementIndex;
-}
+import { insertIntoStyles } from '../store.js';
+import './parts-styles.scss';
+import parts from 'parts/parts.js';
+import newIndex from 'util/key.js';
 
 function CreatePartTag(name, className, children, iterator) {
     return (
@@ -57,24 +54,23 @@ function parseTree(tree) {
 
     for (let iterator = 0; iterator < tree.length; iterator++) {
         const item = tree[iterator];
-        const elem = CreatePartTag(item.name, item.className, item.children, iterator);
+        const part = parts[item.type];
+        const elem = CreatePartTag(part.id, part.class, item.children, iterator);
         elems.push(elem);
     }
     return elems;
 }
 
-function ConstructBuilding() {
+function PartsView() {
     const bldgTree = useSelector((state) => state.building.tree);
     const elems = parseTree(bldgTree);
 
     return (
         <div className="container constructBuilding">
-            <h2>Parts</h2>
-            {
-                elems
-            }
+            <h2>Parts (click to enter into Editor)</h2>
+            <div class="parts">{ elems }</div>
         </div>
     );
 }
 
-export default ConstructBuilding;
+export default PartsView;

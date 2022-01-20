@@ -1,0 +1,102 @@
+/* Palette */
+.palette {
+    margin-bottom: 4px;
+
+    .color-drop {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 4px;
+        border-radius: 4px;
+
+        & > label {
+            color: #dbdadf;
+            width: 60px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        & label:hover {
+            cursor: pointer;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #eee;
+
+            & label {
+                color: black;
+            }
+        }
+
+        &.selected {
+            border: 2px solid yellow;
+        }
+    }
+}
+
+/* Color list */
+.color-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 4px;
+    margin-bottom: 4px;
+
+    .color-item {
+        padding: 2px 4px;
+        border-radius: 4px;
+
+        .color {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid black;
+        }
+
+        label {
+            color: #dbdadf;
+            vertical-align: middle;
+            margin-left: 8px;
+
+            &:hover {
+                color: black;
+                cursor: pointer;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: #eee;
+
+            label {
+                color: black;
+            }
+        }
+    }
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 1230px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .color-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,37 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
-let elementIndex = 0;
-function newIndex() {
-    elementIndex++;
-    return elementIndex;
-}
+import './view-styles.css';
+import parts from 'parts/parts.js';
+import 'parts/parts-styles.scss';
+import newIndex from 'util/key.js';
 
 function createElement(element) {
-    const attrs = {
-        key: newIndex()
-    };
-    if (element.name) {
-        attrs.id = element.name;
-    }
-    if (element.className) {
-        attrs.className = element.className
-    }
-    const content = [];
+    const children = [];
     if (element.children) {
-        
-        for (let child of element.children) {
-            content.push(createElement(child));
+        for (const child of element.children) {
+            children.push(createElement(child));
         }
     }
-    const rElem = React.createElement('div', attrs, content);
-    return rElem;
+
+    const details = parts[element.type];
+
+    return (
+        <div id={details.id ? details.id : ''} className={details.class ? details.class : ''} key={newIndex()}>{element.text}{details.text}{children}</div>
+    );
 }
 
-function ViewBuilding() {
+function ViewView() {
 
     const bldgTree = useSelector((state) => state.building.tree);
-    const fixedStyles = useSelector((state) => state.building.fixedStyles);
     const userStyles = useSelector((state) => state.building.userStyles);
 
     const rElems = [];
@@ -42,7 +33,6 @@ function ViewBuilding() {
     return (
         <div className="container viewBuilding">
             <style type="text/css" scoped>
-                { fixedStyles }
                 { userStyles }
             </style>
             <h2>Final View</h2>
@@ -55,4 +45,4 @@ function ViewBuilding() {
     );
 }
 
-export default ViewBuilding;
+export default ViewView;
