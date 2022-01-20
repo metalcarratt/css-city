@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { insertIntoStyles } from '../store.js';
 import styles from './parts.module.css';
+import AppStyles from 'app/App.module.scss';
 import parts from 'parts/parts.js';
 import newIndex from 'util/key.js';
 
@@ -66,7 +67,7 @@ function PartsView() {
     const elems = parseTree(bldgTree);
 
     return (
-        <div className={`container ${styles.constructBuilding}`}>
+        <div className={`${AppStyles.container} ${styles.constructBuilding}`}>
             <h2>Parts (click to enter into Editor)</h2>
             <div className={styles.parts}>{ elems }</div>
         </div>

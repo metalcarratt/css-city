@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateStyles, updateCursorPosition, insertIntoStyles } from '../store.js';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import ChooseColors from '../../views/ChooseColors.jsx';
-import styles from './style.module.css';
+import styles from './style.module.scss';
+import AppStyles from 'app/App.module.scss';
 
 function StyleView() {
     const userStyles = useSelector((state) => state.building.userStyles);
@@ -45,15 +46,15 @@ function StyleView() {
     const editColors = () => setShowColorModal(true);
 
     return (
-        <div className={`container ${styles.styleBuilding}`}>
-            <div className="heading">
+        <div className={`${AppStyles.container} ${styles.styleBuilding}`}>
+            <div className={styles.heading}>
                 <h2>Editor</h2>
                 <button onClick={clickBgColor}>bgColor</button>
                 <button onClick={clickCurlyBrace}>&#123;&#125;</button>
                 {
                     savedColors.map((saveColor, index) => (
                         <button onClick={() => clickColor(index)} key={index}>
-                            <span className="color" style={{backgroundColor: saveColor}} />
+                            <span className={styles.headingColor} style={{backgroundColor: saveColor}} />
                             {saveColor}
                         </button>
                     ))

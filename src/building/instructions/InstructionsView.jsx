@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateMission } from '../store.js';
 import styles from './instruction.module.css';
+import AppStyles from 'app/App.module.scss';
 import './missions.scss';
 
 function InstructionsView() {
@@ -18,7 +19,7 @@ function InstructionsView() {
     }
 
     return (
-        <div className={`container ${styles.instructions}`}>
+        <div className={`${AppStyles.container} ${styles.instructions}`}>
             <h2>Mission</h2>
             <div className={`${styles.mission} mission`} dangerouslySetInnerHTML={{ __html: blurb}} />
             <div className="buttons">

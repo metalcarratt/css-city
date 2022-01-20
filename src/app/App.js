@@ -1,4 +1,4 @@
-import './App.css';
+import AppStyles from './App.module.scss';
 import ViewView from '../building/view/ViewView.jsx';
 import StyleView from '../building/style/StyleView.jsx';
 import PartsView from '../building/parts/PartsView.jsx';
@@ -7,7 +7,7 @@ import InstructionsView from '../building/instructions/InstructionsView.jsx';
 
 function App() {
   return (
-    <div className="App">
+    <div className={AppStyles.App}>
       <ViewView />
       <InstructionsView />
       <StyleView />
