@@ -30,7 +30,7 @@ const colors = [
     "Green", "DarkGreen", "YellowGreen", "OliveDrab", "Olive", "DarkOliveGreen", "MediumAquamarine", "DarkSeaGreen", "LightSeaGreen", "DarkCyan", "Teal",
 
     // blues
-    "Aqua", "Cyan", "LightCyan", "PaleTurqoise", "Aquamarine", "Turqoise", "MediumTurqoise", "DarkTurqoise", "CadetBlue", "SteelBlue", "LightSteelBlue", "PowderBlue",
+    "Aqua", "Cyan", "LightCyan", "PaleTurquoise", "Aquamarine", "Turquoise", "MediumTurquoise", "DarkTurquoise", "CadetBlue", "SteelBlue", "LightSteelBlue", "PowderBlue",
     "LightBlue", "SkyBlue", "LightSkyBlue", "DeepSkyBlue", "DodgerBlue", "CornflowerBlue", "MediumSlateBlue", "RoyalBlue", "Blue", "MediumBlue", "DarkBlue", "Navy",
     "MidnightBlue",
 

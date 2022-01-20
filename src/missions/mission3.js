@@ -1,13 +1,17 @@
 exports.blurb = `
-<h1>Mission 3 - Give me a garrage</h1>
-<p>This house has a garage. Can you make the garage wall a diffent colour from the house?</p>
-<h1>How to:</h1>
-<p>In CSS you can target an element within an element by typing them in order with a space between. For example the following targets the left roof:</p>
+<h1>Mission 3 - Park my ride</h1>
+<p>Looks at the parts below. Can you see lots of parts within parts? It's starting to get messy right? How can I change, for example, the roof
+of only the garage to be a different colour? Look at the following:</p>
 <pre><code>
-.left #roof {
-    ...
+#partition:nth-child(1) #roof {
+    background-color: Khaki;
 }
 </code></pre>
+
+<p>What happened here? We first found the second partition, "#partition:nth-child(1)" and then we found the roof, "#roof" inside it. We make
+sure to put an empty space, " " between them. Now we can style the garage roof!</p>
+
+<p>Can you spruce up my garage a bit?</p>
 `
 
 exports.building = [

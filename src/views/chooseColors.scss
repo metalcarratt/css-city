@@ -45,25 +45,6 @@
         padding: 2px 4px;
         border-radius: 4px;
 
-        .color {
-            width: 15px;
-            height: 15px;
-            display: inline-block;
-            vertical-align: middle;
-            border: 1px solid black;
-        }
-
-        label {
-            color: #dbdadf;
-            vertical-align: middle;
-            margin-left: 8px;
-
-            &:hover {
-                color: black;
-                cursor: pointer;
-            }
-        }
-
         &:hover {
             cursor: pointer;
             background-color: #eee;
@@ -71,6 +52,28 @@
             label {
                 color: black;
             }
+        }
+    }
+}
+
+.color-item {
+
+    .color {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        border: 1px solid black;
+    }
+
+    label {
+        color: #dbdadf;
+        vertical-align: middle;
+        margin-left: 8px;
+
+        &:hover {
+            color: black;
+            cursor: pointer;
         }
     }
 }
