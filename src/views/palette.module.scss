@@ -1,0 +1,34 @@
+.palette {
+    margin-bottom: 4px;
+}
+
+.colorDrop {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 4px;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #eee;
+
+        label {
+            color: black;
+        }
+    }  
+
+    label:hover {
+        cursor: pointer;
+    }
+}
+
+.colorDropSelected {
+    border: 2px solid yellow;
+}
+
+.colorDropLabel {
+    color: #dbdadf;
+    width: 60px;
+    display: inline-block;
+    vertical-align: middle;
+}

@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import './modal.css';
-import './chooseColors.scss';
+import modalStyles from './modal.module.css';
+import paletteStyles from './palette.module.scss';
+import colorListStyles from './colorlist.module.scss';
+import colorStyles from './color.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { changePalette } from '../building/store.js';
 
@@ -47,18 +49,18 @@ const nextId = () => keyId++;
 
 function ColorItem(props) {
     return (
-        <span className="color-item" onClick={props.onClick}>
-            <span className="color" style={{backgroundColor: props.color}} />
-            <label>{props.color}</label>
+        <span onClick={props.onClick} className={props.inColorList ? colorListStyles.colorItem : ''}>
+            <span className={colorStyles.color} style={{backgroundColor: props.color}} />
+            <label className={colorStyles.colorLabel}>{props.color}</label>
         </span>
     );
 }
 
 function ColorDrop(props) {
-    const className = 'color-drop' + (props.selected ? ' selected' : '');
+    const className = `${paletteStyles.colorDrop} ${props.selected ? paletteStyles.colorDropSelected : ''}`;
     return (
         <span className={className} onClick={(e) => props.select(props.number)} >
-            <label>{props.label}</label>
+            <label className={paletteStyles.colorDropLabel}>{props.label}</label>
             <ColorItem id={nextId} color={props.color} />
         </span>
     )
@@ -79,9 +81,9 @@ function ChooseColors(props) {
     }
 
     return (
-        <div className="modal-background">
-            <div className="modal">
-                <div className="palette">
+        <div className={modalStyles.modalBackground}>
+            <div className={modalStyles.modal}>
+                <div className={paletteStyles.palette}>
                     <h2>Palette</h2>
                     <ColorDrop label="One:" color={palette[0]} number={0} selected={selectedColorDrop === 0} select={selectColorDrop}/>
                     <ColorDrop label="Two:" color={palette[1]} number={1} selected={selectedColorDrop === 1} select={selectColorDrop}/>
@@ -89,9 +91,9 @@ function ChooseColors(props) {
                     <ColorDrop label="Four:" color={palette[3]} number={3} selected={selectedColorDrop === 3} select={selectColorDrop}/>
                </div>
                <h2>Colour List</h2>
-                <div className="color-list">
+                <div className={colorListStyles.colorList}>
                     {
-                        colors.map(color => <ColorItem key={nextId()} color={color} onClick={() => selectColor(color)} /> )
+                        colors.map(color => <ColorItem key={nextId()} color={color} onClick={() => selectColor(color)} inColorList={true} /> )
                     }
                 </div>
                 <button onClick={props.onDone}>Done</button>

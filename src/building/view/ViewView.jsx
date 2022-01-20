@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import './view-styles.css';
+import viewStyles from './view.module.css';
 import parts from 'parts/parts.js';
 import 'parts/parts-styles.scss';
 import newIndex from 'util/key.js';
@@ -31,7 +31,7 @@ function ViewView() {
     }
 
     return (
-        <div className="container viewBuilding">
+        <div className={`container ${viewStyles.viewBuilding}`}>
             <style type="text/css" scoped>
                 { userStyles }
             </style>

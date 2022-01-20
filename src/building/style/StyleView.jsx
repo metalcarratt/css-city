@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateStyles, updateCursorPosition, insertIntoStyles } from '../store.js';
 import CodeEditor from '@uiw/react-textarea-code-editor';
 import ChooseColors from '../../views/ChooseColors.jsx';
-import './style-styles.css';
+import styles from './style.module.css';
 
 function StyleView() {
     const userStyles = useSelector((state) => state.building.userStyles);
@@ -45,7 +45,7 @@ function StyleView() {
     const editColors = () => setShowColorModal(true);
 
     return (
-        <div className="container styleBuilding">
+        <div className={`container ${styles.styleBuilding}`}>
             <div className="heading">
                 <h2>Editor</h2>
                 <button onClick={clickBgColor}>bgColor</button>
@@ -60,19 +60,21 @@ function StyleView() {
                 }
                 <button onClick={editColors}>Choose Colours</button>
             </div>
-            <CodeEditor
-                ref={setCodeEditorRef}
-                className="stylesEditor"
-                value={userStyles}
-                language="css"
-                onChange={handleChange}
-                onKeyDown={moveAboutCodeEditor}
-                onClick={moveAboutCodeEditor}
-                style={{
-                    fontFamily: 'monospace',
-                    fontSize: '12'
-                }}
-            />
+            <div className={styles.editorWrapper}>
+                <CodeEditor
+                    ref={setCodeEditorRef}
+                    className={styles.stylesEditor}
+                    value={userStyles}
+                    language="css"
+                    onChange={handleChange}
+                    onKeyDown={moveAboutCodeEditor}
+                    onClick={moveAboutCodeEditor}
+                    style={{
+                        fontFamily: 'monospace',
+                        fontSize: '12'
+                    }}
+                />
+            </div>
             
             { showColorModal && <ChooseColors onDone={() => setShowColorModal(false)} /> }
         </div>

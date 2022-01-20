@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { insertIntoStyles } from '../store.js';
-import './parts-styles.scss';
+import styles from './parts.module.css';
 import parts from 'parts/parts.js';
 import newIndex from 'util/key.js';
 
 function CreatePartTag(name, className, children, iterator) {
     return (
-        <div className="part" key={newIndex()}>
-            <span className="iterator">{iterator}</span>
+        <div className={styles.part} key={newIndex()}>
+            <span className={styles.iteration}>{iterator + 1}</span>
             <span>
             { name ? CreateIdTag(name) : '' }
             { className ? CreateClassTag(className) : '' }
@@ -29,7 +29,7 @@ function CreateIdTag(name) {
     }
 
     return (
-        <span className="id" key={newIndex()} onClick={clickId}>
+        <span className={styles.id} key={newIndex()} onClick={clickId}>
             {'id = ' + name}
         </span>
     );
@@ -43,7 +43,7 @@ function CreateClassTag(className) {
     }
 
     return (
-        <span className="class" key={newIndex()} onClick={clickClass}>
+        <span className={styles.class} key={newIndex()} onClick={clickClass}>
             {'class = ' + className}
         </span> 
     );
@@ -66,9 +66,9 @@ function PartsView() {
     const elems = parseTree(bldgTree);
 
     return (
-        <div className="container constructBuilding">
+        <div className={`container ${styles.constructBuilding}`}>
             <h2>Parts (click to enter into Editor)</h2>
-            <div class="parts">{ elems }</div>
+            <div className={styles.parts}>{ elems }</div>
         </div>
     );
 }

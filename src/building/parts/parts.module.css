@@ -1,0 +1,54 @@
+/* constructBuilding */
+.constructBuilding {
+    display: grid;
+    grid-template-rows: 18px auto; 
+}
+
+/* parts */
+.parts {
+    overflow: scroll;
+}
+
+/* part */
+.part {
+    margin-top: 5px;
+    padding: 4px;
+    background-color: #354158;
+    border-top: 1px solid #505e78;
+    border-left: 1px solid #505e78;
+    border-bottom: 1px solid #222D46;
+    border-right: 1px solid #222D46;
+
+    display: grid;
+    grid-template-columns: 14px 1fr;
+}
+
+/* iteration */
+.iteration {
+    font-family: monospace;
+    margin-right: 8px;
+    display: inline-block;
+    align-self: center;
+}
+
+/* id */
+.id {
+    color: #fb9191;
+    margin-left: 4px;   
+}
+
+.id:hover {
+    cursor: pointer;
+    background-color: #6570aa;
+}
+
+/* class */
+.class {
+    color: #94f794;
+    margin-left: 4px;
+}
+
+.class:hover {
+    cursor: pointer;
+    background-color: #6570aa;
+}

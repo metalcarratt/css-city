@@ -1,0 +1,18 @@
+.colorLabel {
+    color: #dbdadf;
+    vertical-align: middle;
+    margin-left: 8px;
+
+    &:hover {
+        color: black;
+        cursor: pointer;
+    }
+}
+
+.color {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid black;
+}

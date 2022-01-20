@@ -8,7 +8,7 @@ letter "L", and that means you can change it's colour using the "colour" propert
 
 exports.building = [
     {
-        type: 'partition',
+        type: 'left-partition',
         children: [
             {   type: 'left-angled-roof' },
             {   
@@ -20,7 +20,7 @@ exports.building = [
         ]
     },
     {
-        type: 'partition',
+        type: 'middle-partition',
         children: [
             {   type: 'center-angled-roof' },
             {   
@@ -38,7 +38,7 @@ exports.building = [
         ]
     },
     {
-        type: 'partition',
+        type: 'right-partition',
         children: [
             {   type: 'right-angled-roof' },
             {   

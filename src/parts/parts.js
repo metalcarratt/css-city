@@ -33,6 +33,21 @@ export default {
         id: "partition"
     },
 
+    "left-partition": {
+        id: "partition",
+        class: "left"
+    },
+
+    "right-partition": {
+        id: "partition",
+        class: "right"
+    },
+
+    "middle-partition": {
+        id: "partition",
+        class: "middle"
+    },
+
     "garage-door": {
         id: "door",
         class: "garage"

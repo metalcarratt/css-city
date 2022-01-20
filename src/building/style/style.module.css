@@ -10,3 +10,6 @@
     background-color: #1a1a20;
 }
 
+.editorWrapper {
+    overflow: scroll;
+}

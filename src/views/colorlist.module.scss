@@ -1,0 +1,46 @@
+.colorList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 4px;
+    margin-bottom: 4px;
+}
+
+.colorItem {
+    padding: 2px 4px;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #eee;
+
+        label {
+            color: black;
+        }
+    }
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 1230px) {
+    .colorList {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .colorList {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 890px) {
+    .colorList {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    .colorList {
+        grid-template-columns: 1fr 1fr;
+    }
+}

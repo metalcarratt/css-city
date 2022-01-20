@@ -16,7 +16,7 @@ sure to put an empty space, " " between them. Now we can style the garage roof!<
 
 exports.building = [
     {
-        type: 'partition',
+        type: 'left-partition',
         children: [ {
             type: 'roof'
         },
@@ -40,7 +40,7 @@ exports.building = [
         } ]
     },
     {
-        type: 'partition',
+        type: 'right-partition',
         children: [
             {   type: 'roof' },
             {

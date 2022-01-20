@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateMission } from '../store.js';
-import './instruction-styles.scss';
+import styles from './instruction.module.css';
+import './missions.scss';
 
 function InstructionsView() {
     const blurb = useSelector((state) => state.building.blurb);
@@ -17,9 +18,9 @@ function InstructionsView() {
     }
 
     return (
-        <div className="container instructions">
+        <div className={`container ${styles.instructions}`}>
             <h2>Mission</h2>
-            <div className="mission" dangerouslySetInnerHTML={{ __html: blurb}} />
+            <div className={`${styles.mission} mission`} dangerouslySetInnerHTML={{ __html: blurb}} />
             <div className="buttons">
                 { (missionId > 1 ) ? ( 
                     <button onClick={clickPrevious}>Previous</button>
