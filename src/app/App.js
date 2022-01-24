@@ -1,18 +1,16 @@
-import AppStyles from './App.module.scss';
-import ViewView from '../building/view/ViewView.jsx';
-import StyleView from '../building/style/StyleView.jsx';
-import PartsView from '../building/parts/PartsView.jsx';
-import InstructionsView from '../building/instructions/InstructionsView.jsx';
-
+import StylesMission from './StylesMissions.jsx';
+import StylesSandbox from './StylesSandbox.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className={AppStyles.App}>
-      <ViewView />
-      <InstructionsView />
-      <StyleView />
-      <PartsView />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/styles-missions" element={<StylesMission/>}/>
+        <Route path="/styles-sandbox" element={<StylesSandbox/>}/>
+        <Route path="/" element={<StylesMission/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

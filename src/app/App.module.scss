@@ -15,14 +15,26 @@
     }
 }
 
-.App {
-    display: grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 50% 50%;
+.page {
+    display: grid;    
 
     padding: 10px;
     background-color: #313d52;
     color: white;
     height: 100%;
     box-sizing: border-box;
+}
+
+.styles-missions {
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
+}
+
+.styles-sandbox {
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 50% 50%;
+}
+
+.two-rows {
+    grid-row-end: span 2;
 }

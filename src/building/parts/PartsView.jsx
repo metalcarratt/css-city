@@ -62,12 +62,12 @@ function parseTree(tree) {
     return elems;
 }
 
-function PartsView() {
+function PartsView(props) {
     const bldgTree = useSelector((state) => state.building.tree);
     const elems = parseTree(bldgTree);
 
     return (
-        <div className={`${AppStyles.container} ${styles.constructBuilding}`}>
+        <div className={`${AppStyles.container} ${styles.constructBuilding} ${props.className}`}>
             <h2>Parts (click to enter into Editor)</h2>
             <div className={styles.parts}>{ elems }</div>
         </div>

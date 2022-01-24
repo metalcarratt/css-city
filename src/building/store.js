@@ -5,13 +5,15 @@ import mission2 from '../missions/mission2.js';
 import mission3 from '../missions/mission3.js';
 import mission4 from '../missions/mission4.js';
 import mission5 from '../missions/mission5.js';
+import mission6 from '../missions/mission6.js';
 
 const missions = {
     1: mission1,
     2: mission2,
     3: mission3,
     4: mission4,
-    5: mission5
+    5: mission5,
+    6: mission6
 };
 
 const buildingSlice = createSlice({
@@ -45,7 +47,7 @@ const buildingSlice = createSlice({
         },
         updateMission(state, missionId) {
             const mId = missionId.payload;
-            if (mId >= 1 && mId <= 5) {
+            if (mId >= 1 && mId <= 6) {
                 state.missionId = mId;
                 state.tree = missions[mId].building;
                 state.blurb = missions[mId].blurb;
@@ -56,9 +58,14 @@ const buildingSlice = createSlice({
             _palette[payload.index] = payload.color;
             state.palette = _palette; 
             console.log(state.palette);
+        },
+        loadBuilding(state, {payload}) {
+            state.tree = payload.parts;
+            state.userStyles = payload.css;
+            state.blurb = '';
         }
     }
 });
 
-export const { updateStyles, updateMission, changePalette, updateCursorPosition, insertIntoStyles } = buildingSlice.actions;
+export const { updateStyles, updateMission, changePalette, updateCursorPosition, insertIntoStyles, loadBuilding } = buildingSlice.actions;
 export default buildingSlice.reducer;

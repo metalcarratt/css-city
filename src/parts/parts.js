@@ -1,4 +1,4 @@
-export default {
+const parts = {
     roof: {
         id: "roof"
     },
@@ -21,8 +21,18 @@ export default {
         class: "narrow"
     },
 
+    "castle-window": {
+        id: "window",
+        class: "castle"
+    },
+
     door: {
         id: "door"
+    },
+
+    "castle-door": {
+        id: "door",
+        class: "castle"
     },
 
     house: {
@@ -76,3 +86,5 @@ export default {
         text: "L"
     }
 }
+
+export default parts;

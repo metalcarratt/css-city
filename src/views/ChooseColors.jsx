@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import modalStyles from './modal.module.css';
+import Modal from 'views/modal/Modal.jsx';
 import paletteStyles from './palette.module.scss';
 import colorListStyles from './colorlist.module.scss';
 import colorStyles from './color.module.scss';
@@ -81,24 +81,22 @@ function ChooseColors(props) {
     }
 
     return (
-        <div className={modalStyles.modalBackground}>
-            <div className={modalStyles.modal}>
-                <div className={paletteStyles.palette}>
-                    <h2>Palette</h2>
-                    <ColorDrop label="One:" color={palette[0]} number={0} selected={selectedColorDrop === 0} select={selectColorDrop}/>
-                    <ColorDrop label="Two:" color={palette[1]} number={1} selected={selectedColorDrop === 1} select={selectColorDrop}/>
-                    <ColorDrop label="Three:" color={palette[2]} number={2} selected={selectedColorDrop === 2} select={selectColorDrop}/>
-                    <ColorDrop label="Four:" color={palette[3]} number={3} selected={selectedColorDrop === 3} select={selectColorDrop}/>
-               </div>
-               <h2>Colour List</h2>
-                <div className={colorListStyles.colorList}>
-                    {
-                        colors.map(color => <ColorItem key={nextId()} color={color} onClick={() => selectColor(color)} inColorList={true} /> )
-                    }
-                </div>
-                <button onClick={props.onDone}>Done</button>
+        <Modal>
+            <div className={paletteStyles.palette}>
+                <h2>Palette</h2>
+                <ColorDrop label="One:" color={palette[0]} number={0} selected={selectedColorDrop === 0} select={selectColorDrop}/>
+                <ColorDrop label="Two:" color={palette[1]} number={1} selected={selectedColorDrop === 1} select={selectColorDrop}/>
+                <ColorDrop label="Three:" color={palette[2]} number={2} selected={selectedColorDrop === 2} select={selectColorDrop}/>
+                <ColorDrop label="Four:" color={palette[3]} number={3} selected={selectedColorDrop === 3} select={selectColorDrop}/>
             </div>
-        </div>
+           <h2>Colour List</h2>
+            <div className={colorListStyles.colorList}>
+                {
+                    colors.map(color => <ColorItem key={nextId()} color={color} onClick={() => selectColor(color)} inColorList={true} /> )
+                }
+            </div>
+            <button onClick={props.onDone}>Done</button>
+        </Modal>
     );
 }
 

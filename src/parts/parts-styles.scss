@@ -7,7 +7,6 @@
     justify-content: center;
 
     &.angled {
-        background-color: LightSalmon;
         height: 40px;
         border-radius: 0;
         clip-path: polygon(
@@ -71,6 +70,12 @@
     &.narrow {
         width: 20px;
     }
+
+    &.castle {
+        width: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 }
 
 #door {
@@ -89,9 +94,13 @@
         margin-top: 15px;
         margin-left: 15px;
         display: inline-block;
-        background-color: DarkKhaki;
         border-top: 1px solid black;
         border-left: 1px solid black;
+    }
+
+    &.castle {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 }
 

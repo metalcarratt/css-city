@@ -27,7 +27,7 @@ function InstructionsView() {
                     <button onClick={clickPrevious}>Previous</button>
                 ) : ''}
                 
-                { (missionId < 5 ) ? (
+                { (missionId < 6 ) ? (
                     <button onClick={clickNext}>Next</button>
                 ) : ''}
             </div>

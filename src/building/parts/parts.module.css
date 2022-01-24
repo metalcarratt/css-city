@@ -1,7 +1,8 @@
 /* constructBuilding */
 .constructBuilding {
     display: grid;
-    grid-template-rows: 18px auto; 
+    grid-template-rows: 18px auto;
+    height: 100%;
 }
 
 /* parts */

@@ -1,0 +1,26 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    button {
+        width: 100%;
+        cursor: pointer;
+    }
+}
+
+.fieldset {
+    border: none;
+    padding: 16px 0px;
+
+    label {
+        display: inline-block;
+        width: 60px;
+    }
+
+    input[type="text"] {
+        width: 280px;
+        font-size: 16px;
+        padding: 4px;
+    }
+}

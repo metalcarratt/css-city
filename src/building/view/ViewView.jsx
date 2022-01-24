@@ -1,27 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import viewStyles from './view.module.scss';
 import AppStyles from 'app/App.module.scss';
-import parts from 'parts/parts.js';
 import 'parts/parts-styles.scss';
-import newIndex from 'util/key.js';
-
-function createElement(element) {
-    const children = [];
-    if (element.children) {
-        for (const child of element.children) {
-            children.push(createElement(child));
-        }
-    }
-
-    const details = parts[element.type];
-
-    return (
-        <div id={details.id ? details.id : ''} className={details.class ? details.class : ''} key={newIndex()}>{element.text}{details.text}{children}</div>
-    );
-}
+import createElement from './CreateElement.jsx';
+import SaveModal from 'building/save/SaveModal.jsx';
+import LoadModal from 'building/load/LoadModal.jsx';
 
 function ViewView() {
+
+    const [showSaveModal, setShowSaveModal] = useState(false);
+    const [showLoadModal, setShowLoadModal] = useState(false);
 
     const bldgTree = useSelector((state) => state.building.tree);
     const userStyles = useSelector((state) => state.building.userStyles);
@@ -36,12 +25,20 @@ function ViewView() {
             <style type="text/css" scoped>
                 { userStyles }
             </style>
-            <h2>Final View</h2>
+            <h2>
+                Final View
+                <span className={viewStyles.buttons}>
+                    <button onClick={() => setShowLoadModal(true)}>Load</button>
+                    <button onClick={() => setShowSaveModal(true)}>Save</button>
+                </span>
+            </h2>
             <div className={viewStyles.center}>
                 <div>
                     {rElems}
                 </div>
             </div>
+            {   showSaveModal ? (<SaveModal onDone={() => setShowSaveModal(false)} />) : '' }
+            {   showLoadModal ? (<LoadModal onDone={() => setShowLoadModal(false)} />) : '' }
         </div>
     );
 }
