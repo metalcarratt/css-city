@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/css-city">
       <Routes>
         <Route path="/styles-missions" element={<StylesMission/>}/>
         <Route path="/styles-sandbox" element={<StylesSandbox/>}/>
